@@ -5,17 +5,18 @@ import (
 	"fmt"
 	"log"
 	"net/http"
+	"os"
 )
 
 func main() {
-	
-	
+
 	port := os.Getenv("PORT")
+
 	if port == "" {
-		port := ":3000"
+	    port = ":3000"
 	}
 
-	fmt.Println("Rest API with GO!")
+	fmt.Println("Rest API with GO! running on port ", port)
 
 	http.HandleFunc("/status", handleStatus)
 	http.HandleFunc("/", handleRoot)

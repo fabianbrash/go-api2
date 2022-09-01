@@ -13,7 +13,7 @@ func main() {
 	port := os.Getenv("PORT")
 
 	if port == "" {
-	    port = ":3000"
+	    port = "3000"
 	}
 
 	fmt.Println("Rest API with GO! running on port ", port)
@@ -28,7 +28,7 @@ func main() {
 		w.Write([]byte("OK"))
 	})*/
 
-	err := http.ListenAndServe(port, nil)
+	err := http.ListenAndServe(":" + port, nil)
 	if err != nil {
 		log.Fatal(err)
 	}

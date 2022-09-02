@@ -1,0 +1,16 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: tap-go-web-app
+  description: Tanzu Go REST API
+  tags:
+    - app-accelerator
+    - go
+    - web
+    - tanzu
+  annotations:
+    'backstage.io/kubernetes-label-selector': 'app.kubernetes.io/part-of=tap-go-web-app'
+spec:
+  type: service
+  lifecycle: experimental
+  owner: fb-team
